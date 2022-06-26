@@ -1,0 +1,17 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "meu servidor",
+  "main": "server.js",
+  "scripts": {
+    "test": "teste"
+  },
+  "author": "isaac",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.5",
+    "web3": "^1.7.3"
+  }
+}

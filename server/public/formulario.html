@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="formulario.css" media="screen">
+        <title>Cadastro</title>
+    </head>
+
+    <body>  
+
+        <script src="./formulario.js">    </script>
+
+        <!-- TÍTULO -->
+        <div>
+            <h1 id="titulo">CERTIDÃO DE NASCIMENTO</h1>
+            <br>
+        </div>
+
+        <!-- Início do formulário -->
+        <form method="POST" action="/add">
+            <fieldset class="grupo">
+                <div class="numero" >
+                    <label for="numero" class="required"><strong>Número da Certidão: </strong></label>
+                    <input type="number" size = "20" name="numero" id="numero" oninvalid="this.setCustomValidity('Insira o Número da Certidão') " oninput="setCustomValidity('')" required >
+                </div>
+            </fieldset>
+
+
+            <fieldset class="grupo">
+                <!-- NOME DO NASCIDO  E CPF-->
+                <div class="campo">
+                    <label for="nome"  class="required" ><strong>Nome Completo:</strong></label>
+                    <input type="text" size = "50" name="nome" id="nome" oninvalid="this.setCustomValidity('Insira o Nome do nascido') " oninput="setCustomValidity('')" required>
+                </div>
+                <div class="campo">
+                    <label for="cpf" class="required"><strong>CPF:</strong></label>
+                    <input oninput="mascaraCPF(this)" type="text" size="14" name="cpf" id="cpf" placeholder="000.000.000-00" oninvalid="this.setCustomValidity('Insira o CPF do nascido')">
+                </div>
+
+            </fieldset> 
+
+            <br>
+            <hr width="60%">
+            <br>
+
+            <!--Nome da mae e do pai-->
+            <fieldset class="grupo">
+                <div class="campo">
+                    <label for="nomeMae" class="required"><strong>Nome completo da Mãe</strong></label>
+                    <input type="text" size = "50" name="nomeMae" id="nomeMae" oninvalid="this.setCustomValidity('Insira o Nome da mãe ') " oninput="setCustomValidity('')" required>
+                </div>
+            </fieldset>
+            <fieldset class="grupo">
+                <div class="campo">
+                    <label for="nomePai"><strong>Nome completo do pai</strong></label>
+                    <input type="text"  size = "50" name="nomePai" id="nomePai" >
+                </div>
+            </fieldset>
+            
+            <br>
+            <hr width="60%">
+            <br>
+            <!--Nome do avô e da avó Materna-->
+            <fieldset class="grupo">
+                <div class="campo">
+                    <label for="a_P"><strong>Nome completo da Avó Paterna: </strong></label>
+                    <input type="text"  size = "50" name="a_P" id="a_P" >
+                </div>
+            </fieldset>
+            <fieldset class="grupo">
+                <div class="campo">
+                    <label for="o_P"><strong>Nome completo do Avô Paterno: </strong></label>
+                    <input type="text"  size = "50" name="o_P" id="o_P" >
+                </div>
+            </fieldset>
+
+            <br>
+            <hr width="60%">
+            <br>
+            
+
+            <fieldset class="grupo">
+                <div class="campo">
+                    <label for="a_M"><strong>Nome completo da Avó Materna: </strong></label>
+                    <input type="text"  size = "50" name="a_M" id="a_M" >
+                </div>
+            </fieldset>
+            <fieldset class="grupo">
+                <div class="campo">
+                    <label for="o_M"><strong>Nome completo do Avô Materno: </strong></label>
+                    <input type="text"  size = "50" name="o_M" id="o_M" >
+                </div>
+            </fieldset>
+
+            <br>
+            <hr width="60%">
+            <br>
+
+            <!-- Campo para inserir o sexo -->
+            <div class="campo">
+                <label class="required"><strong>Sexo:</strong></label>
+                <label>
+                    <input type="radio" name="sexo" value="masculino" checked/> Masculino</br>
+                    <input type="radio" name="sexo" value="feminino"/> Feminino
+                </label>
+            </div>
+
+            <!-- Campo para inserir a data -->
+            <div class="campo">
+                <label for="data" class="required"><strong>Data de Nascimento: </strong></label>
+                <input type="date" name="data" id="data" oninvalid="this.setCustomValidity('Insira a data de Nascimento') " oninput="setCustomValidity('')" required>
+            </div>
+
+            <!-- Campo para inserir a hora -->
+            <div class="campo">
+                <label for="hora" class="required"><strong>Horário de nascimento: </strong></label>
+                <input type="time" name="hora" id="hora" min="00:00" max="23:59" oninvalid="this.setCustomValidity('Insira o horario de Nascimento') " oninput="setCustomValidity('')" required>
+            </div>
+
+            <!-- Campo para inserir cidade -->
+            <fieldset class="grupo">
+                <div class="campo">
+                    <label for="cidade" class="required"><strong>Cidade:</strong></label>
+                    <input type="text" name="cidade" id="cidade" oninvalid="this.setCustomValidity('Insira a Cidade de Nascimento') " oninput="setCustomValidity('')" required>
+                </div>
+
+                <div class="campo">
+                    <label for="estado" class="required"><strong>Estado: </strong></label>
+                    <select name="estado">
+                        <option selected="" value="">UF</option>
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AP">AP</option>
+                        <option value="AM">AM</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MT">MT</option>
+                        <option value="MS">MS</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PR">PR</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RS/option>
+                        <option value="RS">RN</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                    </select>
+                </div>
+            </fieldset> 
+
+            <!-- Botão para enviar o formulário -->
+            <button class="botao" type="submit" onsubmit="" >Concluído</button>            
+
+        </form>
+    
+
+        <form method="POST" action="/buscar">
+            <fieldset class="grupo">
+                <div class="campo">
+                    <label for="n_Pesquisar" class="required"><strong>Pesquisar</strong></label>
+                    <input type="number" size = "50" name="n_Pesquisar" id="n_Pesquisar" oninvalid="this.setCustomValidity('Insira o Nome da mãe ') " oninput="setCustomValidity('')" required>
+                </div>
+            </fieldset>
+
+            <button class="botao" type="submit" onsubmit="" >Procurar</button>            
+        </form>
+
+    </body>
+
+</html

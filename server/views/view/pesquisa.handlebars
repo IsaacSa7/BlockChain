@@ -1,0 +1,10 @@
+<form method="POST" action="/exibir">
+    <fieldset class="grupo">
+        <div class="campo">
+            <label for="n_Pesquisar" class="required"><strong>Pesquisar</strong></label>
+            <input type="number" size = "50" name="n_Pesquisar" id="n_Pesquisar" oninvalid="this.setCustomValidity('Insira um número válido ') " placeholder="Insira o Número da Certidão" oninput="setCustomValidity('')" min="0" required>
+        </div>
+    </fieldset>
+
+    <button type="submit" onsubmit="" >Procurar</button>            
+</form>
